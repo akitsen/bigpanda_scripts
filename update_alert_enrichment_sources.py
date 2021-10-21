@@ -1,3 +1,8 @@
+'''
+RUN:
+    - python update_alert_enrichment_sources.py
+'''
+
 import json
 import requests
 

@@ -1,3 +1,8 @@
+'''
+RUN:
+    - python update_environment_sources.py
+'''
+
 import json
 import requests
 
