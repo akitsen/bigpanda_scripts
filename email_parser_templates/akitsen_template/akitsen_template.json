@@ -1,0 +1,44 @@
+{
+    "config": {
+        "email_format": "plain_text",
+        "status": {
+            "default_to": "warning",
+            "source": "subject",
+            "status_map": {
+                "critical": [
+                    "major",
+                    "down",
+                    "bad",
+                    "very bad"
+                ],
+                "ok": [
+                    "ok",
+                    "clear"
+                ],
+                "warning": [
+                    "warning",
+                    "degraded"
+                ]
+            }
+        },
+        "primary_property": {
+            "name": "host",
+            "source": "body",
+            "extraction": "^.*host is ([a-zA-Z0-9\\-\\.\\_]+).*$|^host:\\s([a-zA-Z0-9\\-\\.\\_]+)$",
+            "default_to": "general issue"
+        },
+        "additional_attributes": [
+            {
+                "name": "region",
+                "source": "body",
+                "extraction": "^[r|R]egion:\\s([a-zA-Z0-9\\-\\.\\_]+).*$",
+                "default_to": "us-west-1"
+            },
+            {
+                "name": "email_body",
+                "source": "body",
+                "extraction": "([\\s\\S]*)"
+            }
+        ]
+    }
+}

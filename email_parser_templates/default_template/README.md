@@ -4,10 +4,22 @@ This is the base template with no additional coverage.
 #### Property: `status`
  - `Source`: email subject line
  - `Default Value`: warning 
- - `Status Map`
-   - `critical` : 'major','very bad'
-   - `ok` : 'ok','clear'
-   - `warning` : 'warning'
+ - `Status Map` :
+   - ```
+     "status_map": {
+                "critical": [
+                    "major",
+                    "very bad"
+                ],
+                "ok": [
+                    "ok",
+                    "clear"
+                ],
+                "warning": [
+                    "warning"
+                ]
+            }
+     ```
 
 #### Property: `host`
  - `Source`: email body
