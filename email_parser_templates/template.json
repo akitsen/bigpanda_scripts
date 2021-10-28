@@ -1,0 +1,41 @@
+{
+    "config": {
+        "email_format": "plain_text",
+        "status": {
+            "default_to": "warning",
+            "source": "subject",
+            "status_map": {
+                "critical": [
+                    "major",
+                    "very bad"
+                ],
+                "ok": [
+                    "ok",
+                    "clear"
+                ],
+                "warning": [
+                    "warning"
+                ]
+            }
+        },
+        "primary_property": {
+            "name": "host",
+            "source": "body",
+            "extraction": "host is (.*)",
+            "default_to": "general issue"
+        },
+        "additional_attributes": [
+            {
+                "name": "region",
+                "source": "body",
+                "extraction": "region: (.*)",
+                "default_to": "us-west-1"
+            },
+            {
+                "name": "email_body",
+                "source": "body",
+                "extraction": "([\\s\\S]*)"
+            }
+        ]
+    }
+}
