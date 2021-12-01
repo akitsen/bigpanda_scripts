@@ -37,8 +37,8 @@ for payload in source_tags:
         payload.pop("id")
         payload.pop("created_at")
         payload.pop("updated_at")
-        payload.pop("updated_by")
-        payload.pop("created_by")
+        payload.pop("updated_by", None)
+        payload.pop("created_by", None)
 
         sanitized_filter = (str(payload["filter"]).replace('\'', '\"'))
         payload['filter'] = sanitized_filter
